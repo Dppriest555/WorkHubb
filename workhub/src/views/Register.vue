@@ -40,12 +40,19 @@ export default {
 </script>
 
 <style scoped>
-.regform {
-  margin-top: 350px;
+.error {
+  color: red;
+  font-size: 18px;
 }
-.input {
+input {
   width: 260px;
-  padding: 30px;
-  margin:10px;
+  padding: 10px;
+  margin: 8px;
+  font-size: 21px;
+}
+button {
+  width: 150px;
+  height: 75px;
+  font-size: 100%;
 }
 </style>

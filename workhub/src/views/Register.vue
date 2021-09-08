@@ -53,7 +53,7 @@ export default {
 }
 .regform{
   margin: 5px;
-  padding: 10px 30px 50px 30px;
+  padding: 10px 30px 40px 30px;
   margin-top: 40%;
   border-radius: 10px;
   background-color: #7460aa13;

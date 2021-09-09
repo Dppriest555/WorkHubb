@@ -1,5 +1,5 @@
 <template>
-  <InputForm title='Username'/>
+  <InputForm title='Username or Email'/>
 </template>
 
 

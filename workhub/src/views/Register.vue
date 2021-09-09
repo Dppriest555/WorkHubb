@@ -1,6 +1,9 @@
 <template>
-  <InputForm title='Username or Email'/>
+  <InputForm title="Username or Email"/>
+  <InputForm title="Password"/>
+  
 </template>
+
 
 
 <script>

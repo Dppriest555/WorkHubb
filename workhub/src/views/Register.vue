@@ -1,6 +1,7 @@
 <template>
   <InputForm title="Username or Email"/>
-  <InputForm title="Password"/>
+  <InputFormPassword title="Password"/>
+
   
 </template>
 
@@ -11,13 +12,15 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 
 import InputForm from '@/components/InputForm.vue'
+import InputFormPassword from '@/components/InputFormPassword.vue'
 
 
 export default {
 
    name: 'Register',
   components: {
-    InputForm
+    InputForm,
+    InputFormPassword
   },
 
   data() {

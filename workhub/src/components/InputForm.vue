@@ -1,29 +1,54 @@
 <template>
     <div class="container">
-        <div class="inputtext">
-           <p>{{ title }}</p>
-        </div>
-        <div class="input-icons">
-            <i class="far fa-user"></i>
-            <input class="inputfield" type="email" v-model="email"/>
-        </div>
+        <form @submit.prevent="pressed">
+        <custom-input v-model="email" :label="emailLabel"/>
+        <custom-input v-model="password" :label="passwordLabel"/>
+        <button>Sign Up</button>
+        </form>
     </div>    
 </template>
 
 <script>
-export default {
-  name: 'InputForm',
-  props: ['title']
+import CustomInput from './CustomInput.vue'
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
-}
+
+export default {
+  components: { CustomInput },
+  name: 'InputForm',
+
+  data() {
+    return {
+      email: "",
+      password: "",
+      emailLabel: 'Email',
+      passwordLabel: 'Password',
+    };
+  },
+  methods: {
+      pressed() {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          console.log("here");
+          this.$router.replace({ name: "Home" });
+        })
+        .catch(error => (this.error = error));
+    }
+  }
+};
+
 </script>
 
 <style scoped>
 
-.container {
-    display: flex;
-    flex-direction: column;
+.error {
+  color: red;
+  font-size: 18px;
 }
+
 
 input {
     border: none;

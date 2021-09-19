@@ -3,7 +3,7 @@
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button>usdhik</button>
+        <button>Log in</button>
         </form>
     </div>    
 </template>
@@ -43,6 +43,18 @@ export default {
 </script>
 
 <style scoped>
+
+button {
+  margin-top: 20%;
+  height: 40px;
+  width: 78%;
+  font-size: 18px;
+  border-radius: 27.5px;
+  background-color:#7F04FC ;
+  color: #FFFFFF;
+  border:solid 2px #7F04FC;
+}
+
 
 .error {
   color: red;

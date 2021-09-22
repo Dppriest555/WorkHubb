@@ -27,6 +27,9 @@ div{
     width: 50%;
     border-radius: 90px;
     margin: 30px;
+    cursor: pointer;
 }
-
+div:hover{
+    filter: brightness(125%);
+}
 </style>

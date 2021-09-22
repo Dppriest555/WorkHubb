@@ -2,8 +2,9 @@
   <div class="home">
     <img alt="Office worker ilustration" src="../assets/office-worker-1.png">
       <HelloWorld/>
-      <BaseButton/>
+      <BaseButton href="https://www.reddit.com/hot/" />
   </div>
+  
 </template>
 
 <script>

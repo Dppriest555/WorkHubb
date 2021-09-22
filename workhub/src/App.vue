@@ -1,9 +1,11 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/register">Sign Up</router-link>
+    <router-link to="/register">Sign Up</router-link> |
+    <router-link to="/login">Sign In</router-link>
   </div>
-  <router-view/>
+      <router-view/>
+
 </template>
 
 <style>

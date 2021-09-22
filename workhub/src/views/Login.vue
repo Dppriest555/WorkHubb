@@ -7,12 +7,12 @@
 
 
 <script>
-import InputForm from '@/components/InputForm.vue'
+import InputForm from '@/components/InputFormLogin.vue'
 
 
 export default {
 
-   name: 'Register',
+   name: 'Login',
   components: {
     InputForm,
   }

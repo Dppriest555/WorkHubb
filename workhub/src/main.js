@@ -4,6 +4,12 @@ import router from './router'
 import store from './store'
 import "firebase/firestore"
 
+
+// CSS tools //
+import './assets/reset.css';
+
+
+
 import dotenv from "dotenv";
 import firebase from 'firebase/app';
 require("firebase/auth");

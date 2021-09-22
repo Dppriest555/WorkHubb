@@ -3,7 +3,7 @@
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button>SIGN UP</button>
+        <button>Log in</button>
         </form>
     </div>    
 </template>
@@ -16,7 +16,7 @@ import "firebase/auth";
 
 export default {
   components: { CustomInput },
-  name: 'InputForm',
+  name: 'InputFormLogin',
 
   data() {
     return {
@@ -30,7 +30,7 @@ export default {
       pressed() {
       firebase
         .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
+        .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           console.log("Completed");
           this.$router.replace({ name: "Home" });
@@ -55,6 +55,7 @@ button {
   border:solid 2px #7F04FC;
 }
 
+
 .error {
   color: red;
   font-size: 18px;
@@ -66,8 +67,17 @@ input {
     border-bottom: solid 2px #626262;
     background-color: #EEEEEE;
     width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 
+p {
+    text-align: left;
+    margin-left: 9%;
+    color: #626262;
+    font-weight: 500;
+    font-size: 18px;
+}
 .input-icons{
     margin-top: 20px;
 }

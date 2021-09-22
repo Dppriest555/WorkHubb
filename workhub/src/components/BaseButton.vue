@@ -23,5 +23,10 @@
 <style scoped>
 div{
     background-color: blueviolet;
+    height: 40px;
+    width: 50%;
+    border-radius: 90px;
+    margin: 30px;
 }
+
 </style>

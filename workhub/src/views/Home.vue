@@ -1,9 +1,8 @@
 <template>
   <div class="home">
     <img alt="Office worker ilustration" src="../assets/office-worker-1.png">
-    <HelloWorld/>
-    <br>
-    <BaseButton/>
+      <HelloWorld/>
+      <BaseButton/>
   </div>
 </template>
 
@@ -20,3 +19,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</style>

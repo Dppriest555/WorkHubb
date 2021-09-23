@@ -1,6 +1,7 @@
 <template>
   <div>
     <a v-if="href" :href="href" class="button">
+      
       <slot/>
     </a>
     <button v-else class="button">

@@ -3,7 +3,8 @@
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button>Log in</button>
+        <button>Log In</button>
+         <p>Dont have an account ?<router-link class="linkin" to="/register">Sign Up</router-link></p>
         </form>
     </div>    
 </template>
@@ -46,20 +47,15 @@ export default {
 
 button {
   margin-top: 20%;
-  height: 40px;
-  width: 78%;
+  height: 35px;
+  width: 80%;
   font-size: 18px;
   border-radius: 27.5px;
-  background-color:#7F04FC ;
+  background-color:#36006C;
   color: #FFFFFF;
-  border:solid 2px #7F04FC;
+  border:solid 2px #36006C;
 }
 
-
-.error {
-  color: red;
-  font-size: 18px;
-}
 
 
 input {
@@ -71,13 +67,6 @@ input {
     flex-direction: column;
 }
 
-p {
-    text-align: left;
-    margin-left: 9%;
-    color: #626262;
-    font-weight: 500;
-    font-size: 18px;
-}
 .input-icons{
     margin-top: 20px;
 }

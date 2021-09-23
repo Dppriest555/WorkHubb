@@ -33,7 +33,7 @@ export default {
 input {
     border: none;
     border-bottom: solid 2px rgba(0, 0, 0, 0.278);
-    background-color: #EEEEEE;
+    background-color: #f5f5f5;
     width: 80%;
     font-size: 22px;
     outline:none;

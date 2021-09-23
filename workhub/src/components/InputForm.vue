@@ -1,9 +1,11 @@
 <template>
     <div class="container">
+        <h1>Get Started</h1>
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button>SIGN UP</button>
+        <button>Sign Up</button>
+        <p>Allready Have an account ?<router-link class="linkin" to="/register">Log In</router-link></p>
         </form>
     </div>    
 </template>
@@ -46,18 +48,13 @@ export default {
 
 button {
   margin-top: 20%;
-  height: 40px;
-  width: 78%;
+  height: 35px;
+  width: 80%;
   font-size: 18px;
   border-radius: 27.5px;
-  background-color:#7F04FC ;
+  background-color:#36006C;
   color: #FFFFFF;
-  border:solid 2px #7F04FC;
-}
-
-.error {
-  color: red;
-  font-size: 18px;
+  border:solid 2px #36006C;
 }
 
 

@@ -1,6 +1,7 @@
 <template>
   <div>
     <a v-if="href" :href="href" class="button">
+      
       <slot/>
     </a>
     <button v-else class="button">
@@ -27,6 +28,9 @@ div{
     width: 50%;
     border-radius: 90px;
     margin: 30px;
+    cursor: pointer;
 }
-
+div:hover{
+    filter: brightness(125%);
+}
 </style>

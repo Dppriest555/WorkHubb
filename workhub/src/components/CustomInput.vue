@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <label>
-        <p>{{label}}</p>
+        <p class="label">{{label}}</p>
         <Icons/>
     <input type="text" v-model="inputValue">
     </label>
@@ -34,7 +34,7 @@ input {
     border: none;
     border-bottom: solid 2px rgba(0, 0, 0, 0.278);
     background-color: #f5f5f5;
-    width: 80%;
+    width: 95%;
     font-size: 22px;
     outline:none;
 }
@@ -46,13 +46,8 @@ input[type=text]:focus {
   border-bottom: 3px solid #7F04FC;
 }
 
-p {
-    text-align: left;
-    margin-left: 9%;
-    color: #626262;
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 40px;
+.label{
+   margin-left: 5px;
 }
 
 .container {

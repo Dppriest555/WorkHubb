@@ -1,15 +1,15 @@
 <template>
     <div class="container">
       <div class="Headings">
-      <h1>WorkHub</h1>
+       <h1>Work<span style="color:#36006C">Hub</span></h1>
         <h2>Lets get you started!</h2>
-        <p>Create a profile to continiue</p>
+        <p class="smoltext">Create a profile to continiue</p>
         </div>
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input type="hidden" v-model="password" :label="passwordLabel"/>
         <button>Sign Up</button>
-        <p>Allready Have an account ?<router-link class="linkin" to="/register">Log In</router-link></p>
+        <p>Allready Have an account ?<router-link class="linkin" to="/login">Log In</router-link></p>
         <hr>
         <button class="facebook">Connect with Facebook</button>
         </form>

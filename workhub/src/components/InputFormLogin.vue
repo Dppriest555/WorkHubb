@@ -1,9 +1,9 @@
 <template>
     <div class="container">
        <div class="Headings">
-      <h1>WorkHub</h1>
+      <h1>Work<span style="color:#36006C">Hub</span></h1>
         <h2>Lets get you started!</h2>
-        <p>Create a profile to continiue</p>
+        <p class="smoltext">Create a profile to continiue</p>
         </div>
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
@@ -51,6 +51,12 @@ export default {
 </script>
 
 <style scoped>
+
+
+.smoltext {
+  color: #626262  ;
+}
+
 h2 {
   padding-top: 10px;
 }

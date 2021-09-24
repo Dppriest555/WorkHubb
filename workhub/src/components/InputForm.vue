@@ -9,7 +9,7 @@
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input type="hidden" v-model="password" :label="passwordLabel"/>
         <button>Sign Up</button>
-        <p>Allready Have an account ?<router-link class="linkin" to="/login">Log In</router-link></p>
+        <p>Allready Have an account? <router-link class="linkin" to="/login">Log In</router-link></p>
         <hr>
         <button class="facebook">Connect with Facebook</button>
         </form>
@@ -65,7 +65,8 @@ button {
   margin-top: 20%;
   height: 35px;
   width: 80%;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: bold;
   border-radius: 27.5px;
   background-color:#36006C;
   color: #FFFFFF;

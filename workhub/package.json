@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "compile:sass": "sass scss:src/assets/css"
+    "compile:sass": "sass --watch scss:src/assets/css"
   },
   "dependencies": {
     "autoprefixer": "^10.3.6",

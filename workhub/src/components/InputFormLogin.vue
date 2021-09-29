@@ -8,10 +8,10 @@
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button type="button" class="btn btn-primary">Log In</button>
+        <button type="button" class="btn btn-primary mt-4 mb-2 bg-$facebook">Log In</button>
          <p>Dont have an account? <router-link class="linkin" to="/register">Sign Up</router-link></p>
           <hr>
-        <button class="facebook">Connect with Facebook</button>
+        <button class="btn btn-facebook">Connect with Facebook</button>
         </form>
     </div>    
 </template>
@@ -69,12 +69,6 @@ h2 {
 }
 
 
-.facebook {
-  margin-top: 15px;
-  font-size: 15px;
-  background-color:#0065FD;
-  border:solid 2px #0065FD;
-}
 
 
 input {

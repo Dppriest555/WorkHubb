@@ -11116,6 +11116,33 @@ textarea.form-control-lg {
 .btn-primary {
   background-color: #36006C;
   width: 150px;
+  height: 35px;
+  width: 80%;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 27.5px;
+  color: #FFFFFF;
+  border: solid 2px #36006C;
+  -webkit-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.4);
+}
+
+.btn-facebook {
+  width: 150px;
+  height: 35px;
+  width: 80%;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 27.5px;
+  color: #FFFFFF;
+  -webkit-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.4);
+  margin-top: 15px;
+  font-size: 15px;
+  background-color: #0065FD;
+  border: solid 2px #0065FD;
 }
 
 /*# sourceMappingURL=style.css.map */

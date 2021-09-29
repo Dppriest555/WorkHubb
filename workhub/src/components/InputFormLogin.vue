@@ -8,8 +8,8 @@
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button type="button" class="btn btn-primary mt-4 mb-2 bg-$facebook">Log In</button>
-         <p>Dont have an account? <router-link class="linkin" to="/register">Sign Up</router-link></p>
+        <button type="button" class="btn btn-primary mt-5 mb-5 ">Log In</button>
+         <p>Don't have an account? <router-link class="linkin" to="/register">Sign Up</router-link></p>
           <hr>
         <button class="btn btn-facebook">Connect with Facebook</button>
         </form>

@@ -8,7 +8,7 @@
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button>Log In</button>
+        <button type="button" class="btn btn-primary">Log In</button>
          <p>Dont have an account? <router-link class="linkin" to="/register">Sign Up</router-link></p>
           <hr>
         <button class="facebook">Connect with Facebook</button>
@@ -20,6 +20,7 @@
 import CustomInput from './CustomInput.vue'
 import * as firebase from "firebase/app";
 import "firebase/auth";
+
 
 
 export default {
@@ -67,20 +68,6 @@ h2 {
   text-align: left;
 }
 
-button {
-  margin-top: 20%;
-  height: 35px;
-  width: 80%;
-  font-size: 15px;
-  font-weight: bold;
-  border-radius: 27.5px;
-  background-color:#36006C;
-  color: #FFFFFF;
-  border:solid 2px #36006C;
-  -webkit-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.400);
--moz-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
-}
 
 .facebook {
   margin-top: 15px;

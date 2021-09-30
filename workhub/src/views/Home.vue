@@ -1,9 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Office worker ilustration" src="../assets/office-worker-1.png">
+  <div class="container">
+    <img class="img-fluid" alt="Office worker ilustration" src="../assets/office-worker-1.png">
       <HelloWorld/>
-      <BaseButton href=login />
-     <router-link class="linkin" to="/register">Get Started</router-link>
+     <router-link class="btn btn-primary mt-5" to="/register">Get Started</router-link>
   </div>
   
 </template>

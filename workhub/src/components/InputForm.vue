@@ -9,7 +9,7 @@
       <custom-input v-model="email" :label="emailLabel" />
       <br>
       <custom-input v-model="password" :label="passwordLabel" />
-      <button type="button" class="btn btn-primary mt-5 mb-5">Sign Up</button>
+      <button type="button" class="btn btn-primary mt-5 mb-5 text-left" >Sign Up</button>
       <p>Allready Have an account? <router-link style="color:#36006C" to="/login">Log In</router-link>
       </p>
       <hr>

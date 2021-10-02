@@ -25,7 +25,7 @@
   import CustomInput from './CustomInput.vue'
   import * as firebase from "firebase/app";
   import "firebase/auth";
-  import db from '../main.js'
+  import db from "../main.js"
 
 
   export default {

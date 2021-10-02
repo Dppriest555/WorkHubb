@@ -2,20 +2,15 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueFirestore from "vue-firestore"
 import "firebase/firestore"
 import "bootstrap"
-
-
-
-// CSS tools //
-import './assets/css/style.css';
-
-
-
 import dotenv from "dotenv";
 import firebase from 'firebase/app';
+
 require("firebase/auth");
+require("firebase/firestore")
+
+
 dotenv.config();
 
 const firebaseConfig = {
@@ -31,7 +26,14 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-export {firebaseApp , db}
+export {firebaseApp,db}
 
 
 createApp(App).use(store).use(router).mount('#app')
+
+
+
+
+
+// CSS tools //
+import './assets/css/style.css';

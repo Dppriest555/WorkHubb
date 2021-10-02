@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueFirestore from "vue-firestore"
 import "firebase/firestore"
 import "bootstrap"
 
@@ -26,7 +27,11 @@ const firebaseConfig = {
     appId: "1:681974193584:web:a32ac9958d814306e70a75"
   };
 
-  const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+export {firebaseApp , db}
 
 
 createApp(App).use(store).use(router).mount('#app')

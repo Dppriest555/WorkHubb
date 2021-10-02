@@ -6,6 +6,9 @@
       <p>Create a profile to continiue</p>
     </div>
     <form @submit.prevent="pressed">
+
+      <custom-input v-model="name" :label="nameLabel" />
+      <br>
       <custom-input v-model="email" :label="emailLabel" />
       <br>
       <custom-input v-model="password" :label="passwordLabel" />
@@ -22,6 +25,7 @@
   import CustomInput from './CustomInput.vue'
   import * as firebase from "firebase/app";
   import "firebase/auth";
+  import db from '../main.js'
 
 
   export default {
@@ -32,8 +36,10 @@
 
     data() {
       return {
+        name: "",
         email: "",
         password: "",
+        nameLabel: 'Full Name',
         emailLabel: 'Email',
         passwordLabel: 'Password',
       };
@@ -43,6 +49,22 @@
         firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
+          .then((user) => {
+
+                      // Add a new document in collection "profiles"
+            db.collection("profiles").doc("user.user.id").set({
+                name: this.name
+              })
+              .then(() => {
+                console.log("Document successfully written!");
+              })
+              .catch((error) => {
+                console.error("Error writing document: ", error);
+              });
+
+              }
+
+          )
           .then(() => {
             console.log("Completed");
             this.$router.replace({

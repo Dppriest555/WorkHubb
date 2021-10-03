@@ -11161,4 +11161,8 @@ textarea.form-control-lg {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.display-2 {
+  font-weight: 500;
+}
+
 /*# sourceMappingURL=style.css.map */

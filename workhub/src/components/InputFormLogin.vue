@@ -1,14 +1,14 @@
 <template>
     <div class="container">
        <div class="Headings">
-      <h1>Work<span style="color:#36006C">Hub</span></h1>
+      <h1 class="display-2 mt-5 mb-3"> Work<span style="color:#36006C">Hub</span></h1>
         <h2>Lets get you started!</h2>
-        <p class="smoltext">Create a profile to continiue</p>
+        <p>Create a profile to continiue</p>
         </div>
         <form @submit.prevent="pressed">
         <custom-input v-model="email" :label="emailLabel"/>
         <custom-input v-model="password" :label="passwordLabel"/>
-        <button type="button" class="btn btn-primary mt-5 mb-5 ">Log In</button>
+        <button class="btn btn-primary mb-5 mt-4 ">Log In</button>
          <p>Don't have an account? <router-link class="linkin" to="/register">Sign Up</router-link></p>
           <hr>
         <button class="btn btn-facebook">Connect with Facebook</button>
@@ -53,22 +53,11 @@ export default {
 
 <style scoped>
 
-
-.smoltext {
-  color: #626262  ;
-}
-
-h2 {
-  padding-top: 10px;
-}
-
 .Headings {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
-
-
 
 
 input {

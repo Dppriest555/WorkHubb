@@ -2,14 +2,14 @@
 <div class="container">
     <label>
         <p class="label">{{label}}</p>
-        <Icons/>
+      
     <input type="text" v-model="inputValue">
+
     </label>
 </div>    
 </template>
 
 <script>
-import Icons from '@/components/Icons.vue'
 
 export default {
   name: 'CustomInput',
@@ -37,7 +37,9 @@ input {
     width: 95%;
     font-size: 22px;
     outline:none;
+    margin-bottom: 20px;
 }
+
 input[type=text] {
       padding-left: 25px; 
 }

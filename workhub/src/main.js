@@ -7,6 +7,7 @@ import "bootstrap"
 import dotenv from "dotenv";
 import firebase from 'firebase/app';
 
+
 require("firebase/auth");
 dotenv.config();
 
@@ -31,6 +32,12 @@ const firebaseConfig = {
   
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+  export default firebaseApp.firestore();
+
+
+
+
 
 
 createApp(App).use(store).use(router).mount('#app')

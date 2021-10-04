@@ -1,8 +1,8 @@
 <template>
 <div class="Form">
-  <ConectionCheck/>
-  <InputForm/>
-  <GoogleLogin/>
+    <ConectionCheck/>
+    <InputForm/>
+    <GoogleLogin GoogleTitle= "Login" />
   </div>
 </template>
 

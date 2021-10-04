@@ -2,6 +2,7 @@
 <div class="Form">
   <ConectionCheck/>
   <InputForm/>
+  <GoogleLogin/>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 <script>
 import InputForm from '@/components/InputFormLogin.vue'
 import ConectionCheck from '@/components/ConectionCheck.vue'
+import GoogleLogin from '@/components/GoogleLogin.vue'
 
 
 
@@ -18,7 +20,8 @@ export default {
    name: 'Login',
   components: {
     InputForm,
-    ConectionCheck  
+    ConectionCheck,
+    GoogleLogin
   }
 };
 </script>

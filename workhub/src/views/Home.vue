@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img class="img-fluid" alt="Office worker ilustration" src="../assets/office-worker-1.png">
+    <img class="img-fluid " alt="Office worker ilustration" src="../assets/office-worker-1.png">
       <HelloWorld/>
      <router-link class="btn btn-primary mt-5" to="/register">Get Started</router-link>
   </div>
@@ -20,5 +20,10 @@ export default {
 </script>
 
 <style scoped>
+
+img{
+  margin-top: 110px;
+}
+
 
 </style>

@@ -3,11 +3,13 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/register">Sign Up</router-link> |
     <router-link to="/login">Sign In</router-link>|
-    <router-link to="/customprofile">Custom Profile</router-link>
+    <router-link to="/customprofile">Custom Profile</router-link>|
+    <router-link to="/chatwindow">Chat</router-link>
       <router-view/>
       </div>
 
 </template>
+
 
 <style>
 #app {

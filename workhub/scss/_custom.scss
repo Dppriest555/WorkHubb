@@ -78,6 +78,20 @@ $font-family-sarabun:       'Sarabun', sans-serif ;
     border:solid 2px $facebook;
 }
 
+.btn-google{
+    background-color: $white; 
+    width: 150px;
+    height: 35px;
+    width: 80%;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 27.5px;
+    color: $gray-900;
+    -webkit-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.400);
+    -moz-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
+    box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
+}
+
 .form-control{
     display: block;
     width: 50px;

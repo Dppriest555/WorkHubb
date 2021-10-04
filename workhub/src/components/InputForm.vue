@@ -1,56 +1,55 @@
 <template>
-    <div class="container">
-      <div class="Headings">
-       <h1>Work<span style="color:#36006C">Hub</span></h1>
-        <h2>Lets get you started!</h2>
-        <p class="smoltext">Create a profile to continiue</p>
-        </div>
-        <form @submit.prevent="pressed">
-        <custom-input v-model="email" :label="emailLabel"/>
-        <custom-input type="hidden" v-model="password" :label="passwordLabel"/>
-        <button>Sign Up</button>
-        <p>Allready Have an account? <router-link class="linkin" to="/login">Log In</router-link></p>
-        <hr>
-        <button class="facebook">Connect with Facebook</button>
-        </form>
-    </div>    
+  <div>
+    <div class="error" v-if="error">{{error.message}}</div>
+    <form @submit.prevent="pressed">
+      <h3>Register</h3>
+      <div class="email">
+        <input type="email" v-model="email" placeholder="email" />
+      </div>
+      <div class="password">
+        <input type="password" v-model="password" placeholder="password" />
+      </div>
+      <button type="submit">Register</button>
+      <button class="facebook">Connect with Facebook</button>
+    </form>
+  </div>
 </template>
 
 <script>
-import CustomInput from './CustomInput.vue'
 import * as firebase from "firebase/app";
 import "firebase/auth";
-
-
 export default {
-  components: { CustomInput },
-  name: 'InputForm',
-
   data() {
     return {
       email: "",
       password: "",
-      emailLabel: 'Email',
-      passwordLabel: 'Password',
+      error: ""
     };
   },
   methods: {
-      pressed() {
+    pressed() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          console.log("Completed");
+          console.log(this.email);
           this.$router.replace({ name: "Home" });
         })
         .catch(error => (this.error = error));
     }
   }
 };
-
 </script>
 
 <style scoped>
+div {
+  color: inherit;
+}
+
+.error {
+  color: red;
+}
+
 h2 {
   padding-top: 10px;
 }
@@ -87,17 +86,12 @@ box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
 input {
     border: none;
     border-bottom: solid 2px #626262;
-    background-color: #EEEEEE;
+    background-color: #FFFFFF;
     width: 80%;
+    margin-top: 10px;
 }
 
-.input-icons{
-    margin-top: 20px;
-}
-.input-icons i {
-            position: absolute;
-            margin-bottom: 10px;
-            width: 20px;
-        }
+
         
 </style>
+

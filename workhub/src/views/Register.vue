@@ -3,6 +3,8 @@
   <ConectionCheck/>
   <InputForm/>
   <GoogleLogin GoogleTitle= "Connect" />
+        <p class="mt-4">Already have an account? <router-link class="signin-link text-decoration-none" to="/login">Sign In!</router-link></p>
+
   </div>
 </template>
 
@@ -34,5 +36,10 @@ export default {
 
  .Form {
    margin-top: 50px;
+ }
+
+ .signin-link{
+  color: #36006C;
+  font-weight: 500;
  }
 </style>

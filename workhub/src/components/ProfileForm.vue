@@ -19,22 +19,22 @@
         <div @submit.prevent="submitForm" class="container">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                <input v-model="fullname" type="text" class="form-control" placeholder="Ivan Velkov">
+                <input v-model="user.fullname" type="text" class="form-control" placeholder="Your Full Name">
             </div>
 
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
-                <input v-model="email" type="email" class="form-control" placeholder="name@example.com">
+                <input v-model="user.email" type="email" class="form-control" placeholder="name@example.com">
             </div>
 
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Password</label>
-                <input v-model="password" type="password" class="form-control" placeholder="***">
+                <input v-model="user.password" type="password" class="form-control" placeholder="***">
             </div>
 
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-                <input v-model="phone" type="tel" class="form-control" placeholder="000-000-000">
+                <input v-model="user.phone" type="tel" class="form-control" placeholder="000-000-000">
             </div>
         </div>
 
@@ -110,8 +110,8 @@
             </div>
         </div>
 
-        <button @click="submitForm" class="btn btn-primary">
-            save changes
+        <button @click="submitForm" class="btn btn-primary mb-5">
+            Save Changes
         </button>
 
     </div>
@@ -119,43 +119,66 @@
 </template>
 
 <script>
-    import db from '../main';
+
+const firebase = require('firebase/app');
+require('firebase/auth');
+
 
 
     export default {
         name: 'ProfileForm',
 
+        mounted() {  
+        },
+
         data() {
-
+            //defying all the data we'll be using here
             return {
-                fullname: null,
-                email: null,
-                password: null,
-                phone: null,
+                user: firebase.auth().currentUser,
+                db: firebase.firestore(),
+                user:{
+                    fullname: null,
+                    email: null,
+                    password: null,
+                    phone: null,
+                }
             }
-        },
+
+    },
+
+        methods: {
+                receive(userUID) {
+                return userUID === this.user.uid ? 'sent' : 'received'
+                 },
 
 
-        async uploadInvoice() {
-
-            const dataBase = db.collection("profiles").doc();
-
-            await dataBase.set({
-                fullname: this.fullname,
-                email: this.email,
-                password: this.password,
-                phone: this.phone,
+               //calling submitForm on button
+              async submitForm() {
+                  //specifying collection
+                  this.db.collection('profiles')
+                  //adding fields
+                    .add({ 
+                        name: this.user.fullname,
+                        email: this.user.email,
+                        password: this.user.password,
+                        phone: this.user.phone
+            })
+            //if created, print this
+            .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+            })
+            //if error, print this
+            .catch((error) => {
+           console.error("Error adding document: ", error);
             });
-
+              }
         },
-
-        submitForm() {
-            this.uploadInvoice();
-            console.log('DONE')
-        },
+        
 
 
     }
+
+    
 </script>
 
 <style>

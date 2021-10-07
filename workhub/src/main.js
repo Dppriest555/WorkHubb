@@ -8,15 +8,14 @@ import dotenv from "dotenv";
 import firebase from 'firebase/app';
 
 
+
+
 require("firebase/auth");
 dotenv.config();
 
 
-
 // CSS tools //
 import './assets/css/style.css';
-
-
 
 
 
@@ -31,12 +30,10 @@ const firebaseConfig = {
 
 
 
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default firebaseApp.firestore();
-
-
-
 
 
 

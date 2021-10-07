@@ -10,6 +10,7 @@
         <input type="password" v-model="password" placeholder="password" />
       </div>
       <button type="submit">Register</button>
+
       <button class="facebook">Connect with Facebook</button>
     </form>
   </div>

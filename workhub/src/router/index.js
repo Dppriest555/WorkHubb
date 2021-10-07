@@ -2,8 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
 
-
-
 const routes = [
   {
     path: '/',
@@ -25,7 +23,10 @@ const routes = [
   {
     path: '/customprofile',
     name: 'CustomProfile',
-    component: () => import( '../views/CustomProfile.vue')
+    component: () => import( '../views/CustomProfile.vue'),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/chatwindow',

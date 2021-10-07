@@ -58,7 +58,7 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea v-model="user.about" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
                         </div>
@@ -80,7 +80,7 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">Experience</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea v-model="user.experience" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
                         </div>
@@ -120,8 +120,12 @@
 
 <script>
 
+
 const firebase = require('firebase/app');
 require('firebase/auth');
+
+if (firebase.auth().currentUser !== null) 
+        console.log("user id: " + firebase.auth().currentUser.uid);
 
 
 
@@ -137,31 +141,32 @@ require('firebase/auth');
                 user: firebase.auth().currentUser,
                 db: firebase.firestore(),
                 user:{
+                    userID: null,
                     fullname: null,
                     email: null,
                     password: null,
                     phone: null,
+                    
+                    about: null,
+                    experience: null,
                 }
             }
 
     },
 
         methods: {
-                receive(userUID) {
-                return userUID === this.user.uid ? 'sent' : 'received'
-                 },
-
-
-               //calling submitForm on button
-              async submitForm() {
-                  //specifying collection
-                  this.db.collection('profiles')
-                  //adding fields
+               
+              async submitForm() {      //calling submitForm on button
+                  this.db.collection('profiles')    //specifying collection
                     .add({ 
+                        userID: firebase.auth().currentUser.uid,
                         name: this.user.fullname,
                         email: this.user.email,
                         password: this.user.password,
-                        phone: this.user.phone
+                        phone: this.user.phone,
+
+                        about: this.user.about,
+                        experience: this.user.experience,
             })
             //if created, print this
             .then((docRef) => {

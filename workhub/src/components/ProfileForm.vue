@@ -132,8 +132,12 @@ if (firebase.auth().currentUser !== null)
     export default {
         name: 'ProfileForm',
 
-        mounted() {  
-        },
+         mounted() {
+       this.db.collection('profiles')
+        .add({
+            userID: firebase.auth().currentUser.uid,
+        })
+  },
 
         data() {
             //defying all the data we'll be using here
@@ -141,7 +145,6 @@ if (firebase.auth().currentUser !== null)
                 user: firebase.auth().currentUser,
                 db: firebase.firestore(),
                 user:{
-                    userID: null,
                     fullname: null,
                     email: null,
                     password: null,
@@ -157,8 +160,8 @@ if (firebase.auth().currentUser !== null)
         methods: {
                
               async submitForm() {      //calling submitForm on button
-                  this.db.collection('profiles')    //specifying collection
-                    .add({ 
+                  this.db.collection('profiles').doc()   //specifying collection
+                    .update({ 
                         userID: firebase.auth().currentUser.uid,
                         name: this.user.fullname,
                         email: this.user.email,

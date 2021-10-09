@@ -28,8 +28,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Password</label>
-                <input v-model="user.password" type="password" class="form-control" placeholder="***">
+                <label for="exampleFormControlInput1" class="form-label">Profesion</label>
+                <input v-model="user.profesion" type="text" class="form-control" placeholder="Profesion">
             </div>
 
             <div class="mb-3">
@@ -147,6 +147,7 @@ const userUid =  firebase.auth().currentUser.uid;
                 user:{
                     fullname: null,
                     phone: null,
+                    profesion: null,
                     about: null,
                     experience: null,
                 }
@@ -162,7 +163,7 @@ const userUid =  firebase.auth().currentUser.uid;
                         userID: firebase.auth().currentUser.uid,
                         name: this.user.fullname,
                         phone: this.user.phone,
-
+                        profesion: this.user.profesion,
                         about: this.user.about,
                         experience: this.user.experience,
             })

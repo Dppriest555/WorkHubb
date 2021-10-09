@@ -119,6 +119,7 @@
 </template>
 
 <script>
+import { database } from 'firebase/app';
 
 
 const firebase = require('firebase/app');
@@ -127,16 +128,15 @@ require('firebase/auth');
 if (firebase.auth().currentUser !== null) 
         console.log("user id: " + firebase.auth().currentUser.uid);
 
-
+const userUid =  firebase.auth().currentUser.uid;
 
     export default {
         name: 'ProfileForm',
 
          mounted() {
        this.db.collection('profiles')
-        .add({
-            userID: firebase.auth().currentUser.uid,
-        })
+        
+        .doc(userUid).set({userID: firebase.auth().currentUser.uid})
   },
 
         data() {
@@ -146,10 +146,7 @@ if (firebase.auth().currentUser !== null)
                 db: firebase.firestore(),
                 user:{
                     fullname: null,
-                    email: null,
-                    password: null,
                     phone: null,
-                    
                     about: null,
                     experience: null,
                 }
@@ -160,12 +157,10 @@ if (firebase.auth().currentUser !== null)
         methods: {
                
               async submitForm() {      //calling submitForm on button
-                  this.db.collection('profiles').doc()   //specifying collection
+                  this.db.collection('profiles').doc(userUid)  //specifying collection
                     .update({ 
                         userID: firebase.auth().currentUser.uid,
                         name: this.user.fullname,
-                        email: this.user.email,
-                        password: this.user.password,
                         phone: this.user.phone,
 
                         about: this.user.about,
@@ -173,7 +168,7 @@ if (firebase.auth().currentUser !== null)
             })
             //if created, print this
             .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
+            console.log("Document written with ID: ", docRef);
             })
             //if error, print this
             .catch((error) => {

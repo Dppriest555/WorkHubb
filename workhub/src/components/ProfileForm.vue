@@ -188,7 +188,3 @@ if (firebase.auth().currentUser !== null)
 
     
 </script>
-
-<style>
-
-</style>

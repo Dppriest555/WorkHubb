@@ -11159,4 +11159,26 @@ textarea.form-control-lg {
   box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.4);
 }
 
+.inputstyle {
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  border-bottom: 2px solid #6c757d;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+  height: auto;
+  width: 70%;
+  outline: none;
+  background: none;
+}
+.inputstyle:hover {
+  border-color: #6610f2;
+}
+.inputstyle:focus {
+  border-color: #6610f2;
+}
+
 /*# sourceMappingURL=style.css.map */

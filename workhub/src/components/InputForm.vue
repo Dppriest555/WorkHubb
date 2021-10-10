@@ -20,19 +20,27 @@
 import * as firebase from "firebase/app";
 import "firebase/auth";
 export default {
+
   data() {
     return {
       email: "",
       password: "",
-      error: ""
+      error: "",
+                db: firebase.firestore(),
     };
   },
   methods: {
-    pressed() {
+     pressed() {
       firebase
-        .auth()
+        .auth() 
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
+          const userUid =  firebase.auth().currentUser.uid;
+
+                 this.db.collection('profiles').doc(userUid)  //specifying collection
+                    .set({ 
+                        userID: firebase.auth().currentUser.uid,
+            })
           console.log(this.email);
           this.$router.replace({ name: "Home" });
         })

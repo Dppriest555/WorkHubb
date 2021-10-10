@@ -5,20 +5,19 @@
       </div>
 
       <div class="container">
-          <h1>{{ this.fullname }}</h1>
-          <h4> {{ this.profesion }} </h4>
+          <h1>{{}}</h1>
+          <h4> {{}} </h4>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-name: 'myProfie',
-props:{
-    
+name: 'MyProfie',
+
+   
 }
 
-}
 </script>
 
 <style>

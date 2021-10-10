@@ -18,7 +18,6 @@
 <style>
   #app {
     background-color: #e9ecef;
-
     font-family: 'Sarabun', sans-serif;
 
     -webkit-font-smoothing: antialiased;

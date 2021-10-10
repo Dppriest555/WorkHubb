@@ -16,10 +16,10 @@
 
         <!-- Settings Inputs-->
         <h2 class="mt-3 mb-3">Settings</h2>
-        <div @submit.prevent="submitForm" class="container">
+        <div @submit.prevent="submitForm" class="container ">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                <input v-model="user.fullname" type="text" class="form-control" placeholder="Your Full Name">
+                <input v-model="user.fullname" type="text" class="form-control " placeholder="Your Full Name">
             </div>
 
             <div class="mb-3">

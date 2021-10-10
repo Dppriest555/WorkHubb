@@ -17,8 +17,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+h1{
+  margin: 30px 0 0;
+  font-weight: bold;
+}
+
 h3 {
-  margin: 20px 0 0;
+  margin: 30px 0 0;
 }
 ul {
   list-style-type: none;
@@ -34,4 +39,5 @@ a {
 .hello{
   font-family: 'Sarabun', sans-serif;
 }
+
 </style>

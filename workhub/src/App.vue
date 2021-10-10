@@ -16,7 +16,7 @@
 
 <style>
   #app {
-    background-color: #e9ecef;
+    background-color: #ffffff;
 
     font-family: 'Sarabun', sans-serif;
 

@@ -1,10 +1,16 @@
 <template>
   <div class="wrapper">
-    <header>
-      <h1>Chat with Firebase!</h1>
-      <button @click="logout">Logout!</button>
-    </header>
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <svg width="24" height="24" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.57 5.92993L3.5 11.9999L9.57 18.0699" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20.5 12H3.67004" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
 
+    <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <h4>Ion Cioca</h4>
+</nav>
     <section>
       <main>
         <div v-for="(msg, index) in messages" v-bind:key="'index-'+index"
@@ -17,9 +23,13 @@
       </main>
 
       <form v-on:submit.prevent="sendMessage">
-        <input v-model="message" type="text" placeholder="Enter your message!">
-        <button :disabled="!message" type="submit">📩</button>
+        <input v-model="message"  type="text" placeholder="Enter your message!">
+        <button :disabled="!message" type="submit"><svg  width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.39999 6.32003L15.89 3.49003C19.7 2.22003 21.77 4.30003 20.51 8.11003L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999 14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23003 7.39999 6.32003Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.11 13.6501L13.69 10.0601" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></button>
       </form>
+
     </section>
   </div>
 </template>
@@ -72,39 +82,37 @@ export default {
 
   body {
     margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
     height: 100%;
     width: 100%;
+    }
+
+  .navbar-brand, svg{
+    margin-left: 7px;
   }
+  nav{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #C6C6C6;
+  }
+
+  .nav, h4{
+    margin-right: 115px;
+  }
+
   .wrapper {
     text-align: center;
     max-width: 728px;
     margin: 0 auto;
+    margin-top: 15px;
   }
-    .wrappe header {
-      background-color: #181717;
-      height: 10vh;
-      min-height: 50px;
-      color: white;
-      position: fixed;
-      width: 100%;
-      max-width: 728px;
-      top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: 99;
-      padding: 10px;
-      box-sizing: border-box;
-    }
+
     section {
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 600px;
-      background-color: rgb(40, 37, 53);
-      width: inherit;
+      background-color: #E5E5E5;
+      width:inherit;
     }
       section main {
         padding: 10px;
@@ -118,41 +126,48 @@ export default {
           width: 0.25rem;
         }
         section main::-webkit-scrollbar-track {
-          background: #1e1e24;
+          background: #E5E5E5;
         }
         section main::-webkit-scrollbar-thumb {
-          background: #6649b8;
+          background: #36006C;
         }
       
       form {
         height: 10vh;
         position: fixed;
-        bottom: 0;
-        background-color: rgb(24, 23, 23);
-         width: 315.4px;
+        bottom: 50px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid #C6C6C6;
+        box-sizing: border-box;
+        width: 350px;
         display: flex;
         font-size: 1.5rem;
       }
        form button {
-          width: 20%;
-          background-color: rgb(56, 56, 143);
+          width: 5%;
+          background-color: rgb(255, 255, 255);
         }
         input {
           line-height: 1.5;
           width: 100%;
-          font-size: 1.5rem;
-          background: rgb(58, 58, 58);
-          color: white;
+          margin-top: 15px;
+          margin-bottom: 15px ;
+          margin-left: 15px;
+          font-size: 1rem;
+          background: rgba(91, 52, 179, 0.2);
+          border-radius: 90px; 
+          color: rgb(0, 0, 0);
           outline: none;
           border: none;
-          padding: 0 10px;
+          padding: 0 20px;
         }
+
       
     button {
       background-color: #282c34; /* Green */
       border: none;
       color: white;
-      padding: 15px 32px;
+      padding: 15px 10px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -165,9 +180,15 @@ export default {
       }
     
     button, input {
-      color: #fff;
+      color: rgb(0, 0, 0);
       border: none;
     }
+
+    button,svg{
+      margin-right: 40px;
+      
+      }
+
     p {
       max-width: 500px;
       margin-bottom: 12px;
@@ -188,14 +209,14 @@ export default {
     }
 
       .message.received p {
-          background: #e5e5ea;
+          background: #ffffff;
           color: #000;
         }
       
      .message.sent p {
 
-          color: #fff;
-          background: #0b93f6;
+          color: rgb(0, 0, 0);
+          background: rgba(91, 52, 179, 0.2);
           align-self: flex-end;
         }
     

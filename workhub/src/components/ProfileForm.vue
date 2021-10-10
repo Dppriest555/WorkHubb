@@ -184,7 +184,3 @@ const userUid =  firebase.auth().currentUser.uid;
 
     
 </script>
-
-<style>
-
-</style>

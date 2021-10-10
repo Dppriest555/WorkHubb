@@ -3,10 +3,10 @@
     <h3>Login</h3>
     <form @submit.prevent="pressed">
       <div class="login">
-        <input type="text" placeholder="email" v-model="email" />
+        <input type="text" class="inputstyle" placeholder="email" v-model="email" />
       </div>
       <div class="password">
-        <input type="password" placeholder="password" v-model="password" />
+        <input type="password" class="inputstyle" placeholder="password" v-model="password" />
       </div>
       <button>Login</button>
       <button class="facebook">Connect with Facebook</button>
@@ -85,13 +85,7 @@ box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
 }
 
 
-input {
-    border: none;
-    border-bottom: solid 2px #626262;
-    background-color: #FFFFFF;
-    width: 80%;
-      margin-top: 10px;
-}
+
 
 
         

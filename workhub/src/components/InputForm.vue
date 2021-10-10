@@ -4,10 +4,10 @@
     <form @submit.prevent="pressed">
       <h3>Register</h3>
       <div class="email">
-        <input type="email" v-model="email" placeholder="email" />
+        <input type="email" class="inputstyle" v-model="email" placeholder="email" />
       </div>
       <div class="password">
-        <input type="password" v-model="password" placeholder="password" />
+        <input type="password" class="inputstyle" v-model="password" placeholder="password" />
       </div>
       <button type="submit">Register</button>
 
@@ -92,13 +92,7 @@ box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
 }
 
 
-input {
-    border: none;
-    border-bottom: solid 2px #626262;
-    background-color: #FFFFFF;
-    width: 80%;
-    margin-top: 10px;
-}
+
 
 
         

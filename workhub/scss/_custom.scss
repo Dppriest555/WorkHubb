@@ -80,7 +80,7 @@ $font-family-sarabun:       'Sarabun', sans-serif ;
 }
 
 .btn-google{
-    background-color: $white; 
+    background-color: $white;
     width: 150px;
     height: 35px;
     width: 80%;
@@ -93,3 +93,32 @@ $font-family-sarabun:       'Sarabun', sans-serif ;
     box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.400);
 }
 
+
+//input styles
+
+.inputstyle {
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    border-bottom: 2px solid $gray-600 ;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    height: auto;
+    width: 70%;
+    outline: none;
+    background: none;
+
+    &:hover{
+        border-color: $indigo;
+    }
+
+    &:focus{
+        border-color: $indigo;
+    }
+}
+
+.form-control{
+}

@@ -92,7 +92,7 @@
 
         <!-- Documents Inputs-->
         <div class="container">
-            <h2 class="mt-3 mb-3">Documents</h2>
+            <h2 class="mt-3 ">Documents</h2>
 
             <div class="mb-3">
                 <label for="formFile" class="form-label">Curiculum Vitae</label>
@@ -110,7 +110,7 @@
             </div>
         </div>
 
-        <button @click="submitForm" class="btn btn-primary mb-5">
+        <button @click="submitForm" class="btn btn-primary">
             Save Changes
         </button>
 

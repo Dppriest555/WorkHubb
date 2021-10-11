@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <router-view />
-    <br>
+<br><br>
     <nav id="nav" class="navbar fixed-bottom">
       <router-link to="/">Home</router-link>
       <router-link to="/register">Sign Up</router-link>

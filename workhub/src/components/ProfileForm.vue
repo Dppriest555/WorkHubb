@@ -4,10 +4,8 @@
         <div class="container">
             <img src="" alt="Your Profile picture">
 
-            <h4>Name</h4>
-
             <div class="mb-3">
-                <label for="formFile" class="form-label">Default file input example</label>
+                <label for="formFile" class="form-label">Upload your profile picture</label>
                 <input class="form-control" type="file" id="formFile">
             </div>
 
